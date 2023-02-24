@@ -38,3 +38,8 @@ jobs:
     - name: Test with pytest
       run: |
         python -m pytest --verbose --junit-xml=junit.xml
+    - name: Junit Report to Annotations
+      uses: ashley-taylor/junit-report-annotations-action@1.4
+      with:
+        access-token: ${{ secrets.GITHUB_TOKEN }}
+        path: "**/junit.xml"
